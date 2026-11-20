@@ -1,0 +1,3 @@
+// faire la classe passerelle entre le DOM et l’algorithme
+
+// Snake.moveRight() etc..............
