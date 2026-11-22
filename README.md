@@ -36,7 +36,7 @@ Ouvre l’adresse affichée par Vite dans le navigateur et garde le terminal ouv
 - [Référence des propriétés et méthodes](Snake/algorithm/README.md) : documentation des outils disponibles pour écrire l’algorithme.
 - [Étapes de réalisation](Snake/algorithm/main.ts) : consignes détaillées dans les commentaires du fichier.
 
-Pour les élèves, prépare une version de départ de `main.ts` à compléter et retire le corrigé `backup.main.ts` de la copie distribuée. La version de travail actuelle contient l’algorithme terminé.
+Le fichier `main.ts` contient les consignes et un squelette typé à compléter, avec les paramètres et les retours attendus pour chaque fonction. Le serpent reste immobile tant que l’algorithme n’est pas écrit. Pour les élèves, retire le corrigé `backup.main.ts` de la copie distribuée.
 
 ## Classes CSS du serpent
 

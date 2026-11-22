@@ -2,6 +2,10 @@
 
 Les étapes de l’exercice sont écrites en commentaires dans [main.ts](main.ts). Cette page décrit les informations et les outils que tu peux utiliser pendant que tu écris ton programme.
 
+Le fichier contient déjà un squelette : les variables sont initialisées et les fonctions sont placées dans `gameLoop`. Complète leur contenu à l’endroit des commentaires « À compléter ». Les commentaires JSDoc expliquent les paramètres et les retours attendus.
+
+Les retours marqués `PROVISOIRE` permettent seulement au projet de compiler. Remplace-les par les résultats de ton algorithme. Au départ, le serpent est visible mais ne bouge pas, et aucun minuteur ne démarre.
+
 `GamePage` crée le serpent, puis appelle ta fonction `gameLoop(snake)`. Le clavier lui transmet ensuite les directions en appelant la fonction `changeDirection` que tu renverras. Les méthodes de `snake` prennent en charge le déplacement des segments et leur affichage.
 
 ## Types utiles
@@ -57,9 +61,9 @@ Les méthodes `Move...` mettent à jour les coordonnées et le dessin. Elles ren
 
 La dernière flèche autorisée fixe le choix pour le tick qui arrive. Chaque appui autorisé remplace le choix précédent, sans file d’attente pour les tours suivants. `CanTurn()` vérifie ce choix par rapport au dernier déplacement effectué. Appuyer dans la direction actuelle permet aussi d’annuler un virage choisi avant le déplacement. Un demi-tour est ignoré et conserve le choix précédent.
 
-## Variables à créer dans main.ts
+## Variables préparées dans main.ts
 
-Ces variables se placent dans `gameLoop`, afin que chaque nouvelle partie ait ses propres valeurs.
+Ces variables sont déjà déclarées dans `gameLoop`, afin que chaque nouvelle partie ait ses propres valeurs. Tu dois les utiliser et mettre à jour celles qui évoluent.
 
 | Nom | Type | Valeur initiale | Rôle |
 | --- | --- | --- | --- |
@@ -84,9 +88,9 @@ Quelques variables temporaires sont aussi utiles dans tes petites fonctions.
 | `randomIndex` | Indice choisi au hasard dans les cases libres. |
 | `index` | Indice utilisé pour parcourir les segments. |
 
-## Fonctions à écrire dans main.ts
+## Fonctions à compléter dans main.ts
 
-Les étapes en commentaires expliquent comment construire ces fonctions. Voici leurs entrées et leurs sorties.
+Les fonctions sont déjà déclarées dans le squelette. Les étapes en commentaires expliquent le traitement à écrire. Voici leurs entrées et leurs sorties.
 
 | Fonction | Paramètres | Retour et rôle |
 | --- | --- | --- |
