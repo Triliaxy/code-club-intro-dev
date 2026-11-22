@@ -4,7 +4,7 @@ import { listenToArrowKeys } from './DOM_manipulation/keyboard';
 import { Snake } from './DOM_manipulation/Snake';
 import { gameLoop } from './algorithm/main';
 
-export const gridSize = 6;
+export const gridSize = 9;
 
 export function GamePage() {
   const [gameNumber, setGameNumber] = useState(0);

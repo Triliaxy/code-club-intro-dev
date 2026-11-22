@@ -1,19 +1,42 @@
 <img src="assets/icon.svg" width="64" height="64" alt="">
 
-# Coder-Dojo_Intro_dev
+# Code-club_intro-dev
 
-Created in [T3 Code](https://t3.codes).
+Atelier d’initiation à la programmation en TypeScript avec un jeu de Snake. L’exercice permet de découvrir les types, les conditions, les boucles, les tableaux et les fonctions.
 
-## Snake
+L’interface utilise React et Vite. Le projet fournit le plateau, le dessin du serpent et les méthodes de déplacement. Les règles du jeu se programment dans [Snake/algorithm/main.ts](Snake/algorithm/main.ts).
 
-The Snake prototype uses React, TypeScript, and Vite. With Node.js 20.19+ or 22.12+, run these commands from the repository root.
+Projet créé avec [T3 Code](https://t3.codes).
+
+## Lancer le projet
+
+Installe une version compatible de Node.js : `^20.19.0` ou `>=22.12.0`, comme indiqué dans `package.json`. npm est fourni avec Node.js.
+
+Ouvre le dossier contenant `package.json` dans Visual Studio Code, puis ouvre un terminal à la racine du projet. Sous Windows, tu peux choisir le profil **Invite de commandes / Command Prompt**.
+
+Installe les dépendances, puis lance le serveur de développement :
 
 ```sh
 npm install
 npm run dev
 ```
 
-Open the address shown by Vite. `npm run build` checks types and generates the production build in `Snake/dist`. `npm run preview` serves that build locally.
+Ouvre l’adresse affichée par Vite dans le navigateur et garde le terminal ouvert pendant que tu travailles.
+
+| Commande | Rôle |
+| --- | --- |
+| `npm install` | Installe les dépendances du projet. |
+| `npm run dev` | Lance le serveur de développement. |
+| `npm run build` | Vérifie les types et génère le site dans `Snake/dist`. |
+| `npm run preview` | Permet de consulter localement le site généré, après un build. |
+
+## Supports de l’atelier
+
+- [Diaporama de l’atelier](Programmer-un-Snake-en-JavaScript.pptx) : installation guidée, bases de TypeScript et explication visuelle des 12 étapes. Le fichier conserve son nom d’origine, mais son contenu concerne TypeScript.
+- [Référence des propriétés et méthodes](Snake/algorithm/README.md) : documentation des outils disponibles pour écrire l’algorithme.
+- [Étapes de réalisation](Snake/algorithm/main.ts) : consignes détaillées dans les commentaires du fichier.
+
+Pour les élèves, prépare une version de départ de `main.ts` à compléter et retire le corrigé `backup.main.ts` de la copie distribuée. La version de travail actuelle contient l’algorithme terminé.
 
 ## Classes CSS du serpent
 
