@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 import './style.css';
+import './DOM_manipulation/snake.css';
 
 const root = document.getElementById('root');
 

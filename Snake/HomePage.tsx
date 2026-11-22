@@ -1,16 +1,15 @@
 import type { CSSProperties } from 'react';
 import { BoardGrid } from './BoardGrid';
-
-type Position = { x: number; y: number };
+import type { Position } from './types';
 
 const gridSize = 5;
 
 const head: Position = { x: 2, y: 2 };
 const apple: Position = { x: 3, y: 2 };
 const snakeSegments = [
-  { position: { x: 0, y: 2 }, className: 'tail' },
-  { position: { x: 1, y: 2 }, className: 'body' },
-  { position: head, className: 'head' },
+  { position: { x: 0, y: 2 }, className: 'tail direction-right' },
+  { position: { x: 1, y: 2 }, className: 'body horizontal' },
+  { position: head, className: 'head direction-right' },
 ];
 
 function cellStyle({ x, y }: Position): CSSProperties {

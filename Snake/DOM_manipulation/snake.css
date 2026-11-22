@@ -1,0 +1,141 @@
+.snake-layer {
+  display: contents;
+}
+
+.snake-segment {
+  --snake-rotation: 0deg;
+  --snake-color: #a6d75f;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--snake-rotation));
+}
+
+.snake-sliding {
+  animation: snake-slide var(--snake-step-duration, 500ms) linear;
+}
+
+.snake-shape-in {
+  animation-name: snake-slide, snake-shape-in;
+}
+
+.snake-shape-out {
+  animation-name: snake-slide, snake-shape-out;
+  animation-fill-mode: none, forwards;
+  pointer-events: none;
+}
+
+@keyframes snake-slide {
+  from {
+    translate: var(--snake-slide-x) var(--snake-slide-y);
+    rotate: var(--snake-slide-angle, 0deg);
+  }
+
+  to {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes snake-shape-in {
+  from { opacity: 0; }
+  35%, to { opacity: 1; }
+}
+
+@keyframes snake-shape-out {
+  from, 15% { opacity: 1; }
+  45%, to { opacity: 0; }
+}
+
+.snake-segment::before {
+  position: absolute;
+  inset: 16% 0;
+  background: var(--snake-color);
+  content: "";
+}
+
+/* Sans orientation explicite, les segments restent horizontaux, vers la droite. */
+.head {
+  --snake-color: var(--lime);
+  --snake-bend-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 -35 V10 Q50 50 63 50' fill='none' stroke='white' stroke-width='68' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.head::before {
+  right: 6%;
+  border-radius: 0 45% 45% 0;
+}
+
+.head::after {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 34%, #22351f 6%, transparent 6.8%),
+    radial-gradient(circle at 70% 66%, #22351f 6%, transparent 6.8%);
+  content: "";
+}
+
+.tail {
+  --snake-color: #83b94f;
+  --snake-bend-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6 C29 6 15 16 15 40 C15 65 34 84 64 84 H100 V16 H64 C60 16 58 6 50 6 Z' fill='white'/%3E%3C/svg%3E");
+}
+
+.tail::before {
+  left: 6%;
+  border-radius: 100% 0 0 100%;
+}
+
+.snake-segment:is(.bend-from-top, .bend-from-bottom)::before {
+  inset: 0;
+  border-radius: 0;
+  mask: var(--snake-bend-mask) center / 100% 100% no-repeat;
+}
+
+.snake-segment.bend-from-bottom::before {
+  transform: scaleY(-1);
+}
+
+/* Pour la queue, la direction indique le côté relié au reste du serpent. */
+.head.direction-right,
+.tail.direction-right,
+.body.horizontal {
+  --snake-rotation: 0deg;
+}
+
+.head.direction-down,
+.tail.direction-down,
+.body.vertical {
+  --snake-rotation: 90deg;
+}
+
+.head.direction-left,
+.tail.direction-left {
+  --snake-rotation: 180deg;
+}
+
+.head.direction-up,
+.tail.direction-up {
+  --snake-rotation: 270deg;
+}
+
+/* Quart de cercle de largeur 68 %, raccordé en haut et à droite.
+   Le masque transparent laisse apparaître le quadrillage sous le virage. */
+.body:is(.turn-up-right, .turn-down-right, .turn-down-left, .turn-up-left)::before {
+  inset: 0;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 A50 50 0 0 0 100 50' fill='none' stroke='white' stroke-width='68'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+.body.turn-up-right {
+  --snake-rotation: 0deg;
+}
+
+.body.turn-down-right {
+  --snake-rotation: 90deg;
+}
+
+.body.turn-down-left {
+  --snake-rotation: 180deg;
+}
+
+.body.turn-up-left {
+  --snake-rotation: 270deg;
+}

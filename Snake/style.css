@@ -198,6 +198,22 @@ h1 span {
   text-align: end;
 }
 
+.game-score {
+  width: fit-content;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 750;
+}
+
+.game-over {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 750;
+}
+
 .coordinate-grid {
   display: grid;
   grid-template-columns: 1.15rem minmax(0, 1fr);
@@ -240,47 +256,6 @@ h1 span {
 
 .cell {
   place-self: center;
-}
-
-.snake-segment {
-  position: relative;
-  width: 88%;
-  height: 68%;
-  border-radius: 18%;
-  background: #a6d75f;
-  box-shadow: inset 0 -0.22rem #0002;
-}
-
-.tail {
-  justify-self: end;
-  width: 76%;
-  margin-inline-end: 6%;
-  border-radius: 42% 18% 18% 42%;
-  background: #83b94f;
-}
-
-.head {
-  border-radius: 18% 32% 32% 18%;
-  background: var(--lime);
-}
-
-.head::before,
-.head::after {
-  position: absolute;
-  right: 24%;
-  width: 13%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #22351f;
-  content: "";
-}
-
-.head::before {
-  top: 24%;
-}
-
-.head::after {
-  bottom: 24%;
 }
 
 .apple {
@@ -383,7 +358,8 @@ h1 span {
   grid-column: 1;
 }
 
-#Start {
+#Start,
+.restart-button {
   display: flex;
   width: 100%;
   min-height: 2.85rem;
@@ -397,6 +373,15 @@ h1 span {
   font: inherit;
   font-weight: 750;
   cursor: pointer;
+}
+
+.restart-button {
+  margin-top: 1rem;
+}
+
+.restart-button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
 }
 
 #Start:disabled {
